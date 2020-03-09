@@ -1,0 +1,684 @@
+@import "hamburgers";
+@import "gallery";
+$titleBgColour: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+$headerPadding: 90px;
+$titleSize: 40px;
+// $titleSize: 8vw;
+$headerHeight: 68px;
+$varWidth: 14vw;
+$contentPadding: 4vw 7vw 8vw;
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 88% 0%
+    }
+
+    50% {
+        background-position: 13% 100%
+    }
+
+    100% {
+        background-position: 88% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 88% 0%
+    }
+
+    50% {
+        background-position: 13% 100%
+    }
+
+    100% {
+        background-position: 88% 0%
+    }
+}
+
+@-o-keyframes AnimationName {
+    0% {
+        background-position: 88% 0%
+    }
+
+    50% {
+        background-position: 13% 100%
+    }
+
+    100% {
+        background-position: 88% 0%
+    }
+}
+
+@-webkit-keyframes pulse {
+    from {
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 9px #00f;
+    }
+
+    50% {
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 18px #fff;
+    }
+
+    to {
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 9px #00f;
+    }
+}
+
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 -10px #fff;
+    }
+
+    40% {
+        box-shadow: 0 0 20px #fff;
+    }
+
+    60% {
+        box-shadow: 0 0 20px #fff;
+    }
+
+    100% {
+        box-shadow: 0 0 -10px #fff;
+    }
+}
+
+
+@keyframes AnimationName {
+    0% {
+        background-position: 88% 0%
+    }
+
+    50% {
+        background-position: 13% 100%
+    }
+
+    100% {
+        background-position: 88% 0%
+    }
+}
+
+/* Fade in */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade in to right */
+@keyframes fadeintoright {
+    from {
+        opacity: 0;
+        width: 0%;
+    }
+
+    to {
+        opacity: 1;
+        width: 100%
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeintoright {}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeintoright {}
+
+/* Internet Explorer */
+@-ms-keyframes fadeintoright {}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeintoright {}
+
+// @keyframes glowing {
+//     0% {
+//         color: rgba(255, 255, 255, 0.5)
+//     }
+
+//     40% {
+//         color: rgba(255, 255, 255, 1);
+//     }
+
+//     60% {
+//         color: rgba(255, 255, 255, 1);
+//     }
+
+//     100% {
+//         color: rgba(255, 255, 255, 0.5);
+//     }
+// }
+
+// ________________________________________________________________________________________________________________________
+
+html {
+    scroll-behavior: smooth;
+    -ms-overflow-style: -ms-autohiding-scrollbar; // hide scrollbar on IE
+    scrollbar-width: none; // disable scrollbar on mf
+}
+
+// hide scrollbar on chrome
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* iframe as background */
+.visualiframe {
+    z-index: -9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* canvas as background */
+/* canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+} */
+
+body {
+    overflow-x: hidden;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body,
+html {
+    margin: 0px;
+    color: white;
+    height: 100%;
+    line-height: 1.8;
+}
+
+embed {
+    width: 100%;
+    height: 700px;
+}
+
+#home {
+    // centre horizontally & vertically
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+    position: fixed;
+    background: none;
+    color: white;
+    box-shadow: none;
+}
+
+#title {
+    -webkit-animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    -ms-animation: fadein 1s;
+    -o-animation: fadein 1s;
+    animation: fadein 1s;
+    transition: 3s;
+
+    margin: 0px $headerPadding 0px $headerPadding;
+    padding: $contentPadding;
+    background: rgba(0, 0, 255, 1);
+    box-shadow: 0px 0px 30px blue;
+    color: white;
+
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    // height: $titleSize*1.75;
+    // width: 100%;
+    // text-align: center;
+}
+
+.titleText {
+    margin: 25px;
+    // font-size: 1px;
+}
+
+.btn {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    // margin: 15px 30px;
+    // text-transform: uppercase;
+    // letter-spacing: 1.2px;
+    // font-weight: 700;
+    outline: none;
+    border-radius: 50px;
+    border: 2px solid #000;
+    color: #000;
+    transition: all 0.3s;
+}
+
+.btn-glow {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    // margin: 15px 30px;
+    // text-transform: uppercase;
+    // letter-spacing: 1.2px;
+    // font-weight: 700;
+    outline: none;
+    border-radius: 50px;
+    border: 2px solid #000;
+    color: #000;
+    // transition: all 0.3s;
+    -webkit-animation-name: pulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.btnContrast {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    // margin: 15px 30px;
+    // text-transform: uppercase;
+    // letter-spacing: 1.2px;
+    // font-weight: 700;
+    outline: none;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn:active,
+.btnContrast:hover,
+.btnContrast:active,
+.btn-glow,
+.btn-glow:active,
+.btn-glow:hover {
+    color: #000;
+    background: #fff;
+    border-color: #fff;
+}
+
+button:focus {
+    outline: 0;
+}
+
+
+
+#content {
+    // height: 200px;
+    // width:150px;
+    // overflow: auto;
+    // position: relative;
+    // overflow-y: hidden;
+
+    // z-index: 3;
+
+    // flex-direction: row;
+    margin: 0px $headerPadding 0px $headerPadding;
+    padding: $contentPadding;
+
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
+
+    box-shadow: 0px 20px 30px black;
+
+    background: rgba(255, 255, 255, 0.85);
+    color: black;
+
+    // margin-top: $titleSize;
+    // height:50%;
+    transition: 2s;
+    /* align-items: center; */
+
+    // top: 0;
+    // bottom: 0;
+    // position: fixed;
+    // overflow: auto;
+    // overflow-y: hidden;
+    // overflow: auto;
+    // position: relative;
+    overflow-y: hidden;
+}
+
+#learningOutcome {
+    -webkit-animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    -ms-animation: fadein 1s;
+    -o-animation: fadein 1s;
+    animation: fadein 1s;
+    transition: 2s;
+
+    margin: 0px $headerPadding;
+    padding: $contentPadding;
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 30px black;
+    color: white;
+}
+
+#aboutMe {
+    margin: 0px $contentPadding 40px $contentPadding;
+}
+
+.contentDivider {
+    -webkit-animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    -ms-animation: fadein 1s;
+    -o-animation: fadein 1s;
+    animation: fadein 1s;
+    transition: 1.5s;
+
+    margin: 0px $headerPadding 0px $headerPadding;
+    // padding: $contentPadding;
+    // padding-top: 20px;
+    background: rgba(150, 150, 150, 0.75);
+    box-shadow: 0px 0px 30px black;
+    color: white;
+}
+
+#dividerText {
+    text-align: center;
+    font-size: 40px;
+    // margin: 20px 0px 0px 0px;
+    padding-top: 25px;
+}
+
+.feedback {
+    // display: flex;
+    // justify-content: center;
+
+    padding: 1px 20px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0px;
+    color: white;
+}
+
+#feedbackExpandButton {
+    position: relative;
+    left: 40px;
+}
+
+.contentPlaceholder {
+    // padding: 1px 2padding: 40px;0px 20px;
+    // display: inline-flex;
+    // justify-content: center;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // align-content: center;
+    overflow: auto;
+
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 25px 0px;
+}
+
+.contentPlaceholderHidden {
+    display: flex;
+    justify-content: center;
+    padding: 5px 25px;
+}
+
+.feedbackThumbnail {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    float: left;
+    // margin-top: 15px;
+    // margin-left: 100px;
+    // margin-right: 20px;
+}
+
+.contentAttachment {
+    // width: 100vw;
+    // position: relative;
+    // left: 50%;
+    // right: 50%;
+    // margin-left: -50vw;
+    // margin-right: -50vw;
+
+    width: 300%;
+    max-width: 100%;
+    height: auto;
+}
+
+article {
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
+}
+
+section {
+    -webkit-animation: fadein 2s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 2s;
+    /* Internet Explorer */
+    -o-animation: fadein 2s;
+    /* Opera < 12.1 */
+    animation: fadein 2s;
+    padding: 14vw;
+}
+
+#element {
+    scrollbar-width: none;
+}
+
+/* Header */
+header {
+    z-index: 1;
+    scrollbar-width: none; // disable header scrollbar bug on mf
+    // background: rgba(255, 255, 255, 0.75);
+    // background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 70%);
+    // border-bottom: 4px rgb(0, 0, 0) solid;
+    // padding-top: 0px;
+
+    // background: $titleBgColour;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    height: $headerHeight;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    /* Enable scrolling if the sidenav has too much content */
+}
+
+.headercontainer {
+    /* position: fixed; */
+    padding-left: 0%;
+    padding-right: 0%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer {
+    z-index: -10;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    // top: 0;
+    // right: 0;
+    width: 100%;
+    height: 60%;
+    // background-color: red;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.headerplaceholder {
+    order: 2;
+}
+
+/* Off-canvas menu */
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: 0px 15px 40px black;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #818181;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    // padding: 20px;
+}
+
+// Fit content to smaller screens
+@media only screen and (max-width: 40em) {
+
+    #content,
+    #learningOutcome,
+    #title,
+    #aboutMe,
+    .contentDivider,
+    .titleText {
+        margin: 0px;
+    }
+
+    .titleText {
+        font-size: 14vw;
+    }
+}
+
+.plus-minus-toggle {
+    cursor: pointer;
+    height: 21px;
+    position: relative;
+    width: 21px;
+
+    &:before,
+    &:after {
+        background: #fff;
+        content: '';
+        height: 5px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 21px;
+        transition: transform 500ms ease;
+    }
+
+    &:after {
+        transform-origin: center;
+    }
+
+    &.collapsed {
+        &:after {
+            transform: rotate(90deg);
+        }
+
+        &:before {
+            transform: rotate(180deg);
+        }
+    }
+}
