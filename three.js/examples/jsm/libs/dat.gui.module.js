@@ -2533,7 +2533,7 @@ var GUI = function GUI( pars ) {
 		} );
 	if ( Common.isUndefined( params.parent ) ) {
 
-		this.closed = params.closed || true;
+		this.closed = params.closed || false;
 		dom.addClass( this.domElement, GUI.CLASS_MAIN );
 		dom.makeSelectable( this.domElement, false );
 		if ( SUPPORTS_LOCAL_STORAGE ) {
@@ -2686,8 +2686,8 @@ GUI.CLASS_CLOSE_TOP = 'close-top';
 GUI.CLASS_CLOSE_BOTTOM = 'close-bottom';
 GUI.CLASS_DRAG = 'drag';
 GUI.DEFAULT_WIDTH = 245;
-GUI.TEXT_CLOSED = '-';
-GUI.TEXT_OPEN = '+';
+GUI.TEXT_CLOSED = 'Close Controls';
+GUI.TEXT_OPEN = 'Open Controls';
 GUI._keydownHandler = function ( e ) {
 
 	if ( document.activeElement.type !== 'text' && ( e.which === HIDE_KEY_CODE || e.keyCode === HIDE_KEY_CODE ) ) {
