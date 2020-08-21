@@ -1631,7 +1631,7 @@ embed {
 }
 
 #home {
-  width: 130%;
+  width: 133%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1696,6 +1696,7 @@ embed {
 }
 
 .btnContrast {
+  text-decoration: none;
   text-align: center;
   font-family: inherit;
   font-size: inherit;
