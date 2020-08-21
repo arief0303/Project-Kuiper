@@ -32,6 +32,8 @@
 
 		var light, pointLight, ambientLight;
 
+		var pointLight2
+
 		var effect, resolution;
 
 		var effectController;
@@ -66,6 +68,10 @@
 			pointLight = new THREE.PointLight( 0xff3300 );
 			pointLight.position.set( 0, 0, 100 );
 			scene.add( pointLight );
+
+			pointLight2 = new THREE.PointLight( "purple" );
+			pointLight2.position.set( 0, 200, 100 );
+			scene.add( pointLight2 );
 
 			ambientLight = new THREE.AmbientLight( 0x080808 );
 			scene.add( ambientLight );
@@ -294,7 +300,7 @@
 
 				lx: 1,
 				ly: 1,
-				lz: 0,
+				lz: -1,
 
 				dummy: function () {}
 
