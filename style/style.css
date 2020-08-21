@@ -1631,6 +1631,7 @@ embed {
 }
 
 #home {
+  width: 130%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1695,17 +1696,22 @@ embed {
 }
 
 .btnContrast {
+  text-align: center;
   font-family: inherit;
   font-size: inherit;
   background: none;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 2px;
+  margin: 4px;
   outline: none;
   border-radius: 50px;
   border: 2px solid #fff;
   color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  width: 33%;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
 
 .btn a {

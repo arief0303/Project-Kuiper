@@ -263,6 +263,8 @@ embed {
 }
 
 #home {
+    width: 130%;
+
     // centre horizontally & vertically
     position: absolute;
     left: 50%;
@@ -343,12 +345,13 @@ embed {
 }
 
 .btnContrast {
+    text-align: center;
     font-family: inherit;
     font-size: inherit;
     background: none;
     cursor: pointer;
-    padding: 10px 10px;
-    // margin: 15px 30px;
+    padding: 2px;
+    margin: 4px;
     // text-transform: uppercase;
     // letter-spacing: 1.2px;
     // font-weight: 700;
@@ -357,6 +360,9 @@ embed {
     border: 2px solid #fff;
     color: #fff;
     transition: all 0.3s;
+    width: 33%;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
 .btn a {
