@@ -424,7 +424,7 @@ button:focus {
     // overflow-y: hidden;
     // overflow: auto;
     // position: relative;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 #learningOutcome {
@@ -571,7 +571,7 @@ header {
     height: $headerHeight;
     width: 100%;
     position: fixed;
-    overflow: hidden;
+    overflow: auto;
     /* Enable scrolling if the sidenav has too much content */
 }
 
@@ -638,6 +638,7 @@ footer {
 #main {
     transition: margin-left .5s;
     // padding: 20px;
+    overflow: scroll;
 }
 
 // Fit content to smaller screens
